@@ -80,25 +80,21 @@
   .pill{display:inline-block;padding:2px 8px;border-radius:6px;font-size:12px;font-weight:600}
   .pill-done{background:rgba(55,201,120,.15);color:var(--accent)}
   .pill-next{background:rgba(61,139,253,.15);color:var(--accent2)}
+  /* Видеообзоры — отдельный блок-список (не таблица), удобно на мобильном */
+  .vids{display:grid;grid-template-columns:1fr;gap:10px;margin-top:10px}
+  .vid{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 14px;
+    background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:13px 16px;
+    text-decoration:none;transition:border-color .15s,background .15s}
+  .vid:hover{border-color:var(--purple);background:var(--panel2)}
+  .vid .vinfo{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;min-width:0}
+  .vid .vstage{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);
+    background:var(--chip);border:1px solid var(--line);border-radius:6px;padding:2px 8px}
+  .vid .vmatch{font-weight:600;color:var(--txt);font-size:15px}
+  .vid .vscore{font-variant-numeric:tabular-nums;color:var(--muted);font-weight:600}
+  .vid .vplay{display:inline-flex;align-items:center;gap:6px;color:var(--purple);font-weight:600;
+    font-size:14px;white-space:nowrap;flex:0 0 auto}
+  .vids .vsoon{color:var(--muted);font-style:italic;font-size:13.5px;padding:4px 2px}
   @media (min-width:720px){ .cards{grid-template-columns:1fr 1fr} .meta{grid-template-columns:1fr 1fr} }
-  /* --- Мобильная адаптация таблиц: строка → карточка, без горизонтального скролла --- */
-  @media (max-width:600px){
-    .wrap{padding:20px 14px 60px}
-    header.top h1{font-size:25px}
-    h2.section{font-size:19px}
-    .scroll{border:none;overflow-x:visible}
-    table{min-width:0;font-size:14px}
-    thead{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
-    tbody tr{display:block;border:1px solid var(--line);border-radius:11px;margin-bottom:10px;background:var(--panel2);overflow:hidden}
-    tbody td{display:flex;justify-content:space-between;gap:14px;align-items:baseline;
-      white-space:normal;text-align:right;padding:9px 13px;border-bottom:1px solid var(--line)}
-    tbody tr td:last-child{border-bottom:none}
-    tbody td::before{content:attr(data-label);font-weight:600;color:var(--muted);
-      text-align:left;font-size:11.5px;text-transform:uppercase;letter-spacing:.3px;flex:0 0 auto;max-width:46%}
-    tbody td[colspan]{text-align:left}
-    tbody td[colspan]::before{content:none}
-    .grid2{grid-template-columns:1fr}
-  }
 </style>
 </head>
 <body>
@@ -197,17 +193,21 @@
 <div class="note" style="border-left-color:var(--purple)">
   Обзоры добавляются по мере выхода. Клик — официальный обзор матча (FIFA / FOX Sports / YouTube).
 </div>
-<div class="scroll">
-<table>
-  <thead><tr><th>Стадия</th><th>Матч</th><th>Счёт</th><th>Видеообзор</th></tr></thead>
-  <tbody>
-    <tr><td>1/16</td><td>Аргентина — Кабо-Верде</td><td class="res">3:2</td><td><a href="https://www.foxsports.com/watch/fmc-15ahqoqpr5humuum">▶ обзор (FOX)</a></td></tr>
-    <tr><td>1/16</td><td>Австралия — Египет</td><td class="res">1:1 (пен)</td><td><a href="https://www.foxsports.com/watch/fmc-y9y8ofjhpsiu98bu">▶ обзор (FOX, extended)</a></td></tr>
-    <tr><td>1/16</td><td>Колумбия — Гана</td><td class="res">1:0</td><td><a href="https://www.youtube.com/watch?v=9TJRhuQOJuE">▶ обзор (YouTube)</a></td></tr>
-    <tr><td colspan="4" style="color:var(--muted);font-style:italic">Обзоры матчей 1/8 финала появятся здесь после игр 4–7 июля →
-      <a href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/highlights">все обзоры на FIFA.com</a></td></tr>
-  </tbody>
-</table>
+<div class="vids">
+  <a class="vid" href="https://www.foxsports.com/watch/fmc-15ahqoqpr5humuum">
+    <span class="vinfo"><span class="vstage">1/16</span><span class="vmatch">Аргентина — Кабо-Верде</span><span class="vscore">3:2</span></span>
+    <span class="vplay">▶ обзор (FOX)</span>
+  </a>
+  <a class="vid" href="https://www.foxsports.com/watch/fmc-y9y8ofjhpsiu98bu">
+    <span class="vinfo"><span class="vstage">1/16</span><span class="vmatch">Австралия — Египет</span><span class="vscore">1:1 (пен)</span></span>
+    <span class="vplay">▶ обзор (FOX, extended)</span>
+  </a>
+  <a class="vid" href="https://www.youtube.com/watch?v=9TJRhuQOJuE">
+    <span class="vinfo"><span class="vstage">1/16</span><span class="vmatch">Колумбия — Гана</span><span class="vscore">1:0</span></span>
+    <span class="vplay">▶ обзор (YouTube)</span>
+  </a>
+  <div class="vsoon">Обзоры матчей 1/8 финала появятся здесь после игр 4–7 июля →
+    <a href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/highlights">все обзоры на FIFA.com</a></div>
 </div>
 
 <!-- ================= ROUND OF 16 CARDS ================= -->
@@ -460,8 +460,7 @@
 <!-- ================= UPDATE LOG ================= -->
 <h2 class="section"><span class="em">📝</span> Журнал обновлений</h2>
 <ul class="log">
-  <li><b>4 июля 2026</b> — <b>мобильная адаптация</b>: на телефоне таблицы превращаются в карточки, ссылки на обзоры видны без горизонтального скролла.</li>
-  <li><b>4 июля 2026</b> — добавлен раздел <b>📺 видеообзоры</b> (обзоры 1/16, дальше — по мере выхода).
+  <li><b>4 июля 2026</b> — добавлен раздел <b>📺 видеообзоры</b> отдельным блоком-списком (обзоры 1/16, дальше — по мере выхода).
   Заведён отдельный <b>архив прогнозов</b> для разбора ошибок.</li>
   <li><b>4 июля 2026</b> — 1/16 завершено. Внесены итоги (сверка прогноз/факт: 2 из 3 победителей, точный счёт Колумбия 1:0).
   Достроена сетка 1/8 (все 8 пар). Прогнозы пересобраны по <b>6 факторам</b> — добавлены <b>судья</b>, <b>предыдущие игры</b> и <b>место проведения</b>.</li>
@@ -484,17 +483,5 @@
 </footer>
 
 </div>
-<script>
-  /* Мобильные таблицы: подписываем каждую ячейку названием её колонки из шапки */
-  document.querySelectorAll('table').forEach(function(t){
-    var heads = [].map.call(t.querySelectorAll('thead th'), function(h){ return h.textContent.trim(); });
-    if(!heads.length) return;
-    t.querySelectorAll('tbody tr').forEach(function(r){
-      var cells = r.querySelectorAll('td');
-      if(cells.length !== heads.length) return; /* пропускаем строки-примечания с colspan */
-      cells.forEach(function(c, i){ if(heads[i]) c.setAttribute('data-label', heads[i]); });
-    });
-  });
-</script>
 </body>
 </html>
