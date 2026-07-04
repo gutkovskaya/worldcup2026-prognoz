@@ -81,6 +81,24 @@
   .pill-done{background:rgba(55,201,120,.15);color:var(--accent)}
   .pill-next{background:rgba(61,139,253,.15);color:var(--accent2)}
   @media (min-width:720px){ .cards{grid-template-columns:1fr 1fr} .meta{grid-template-columns:1fr 1fr} }
+  /* --- Мобильная адаптация таблиц: строка → карточка, без горизонтального скролла --- */
+  @media (max-width:600px){
+    .wrap{padding:20px 14px 60px}
+    header.top h1{font-size:25px}
+    h2.section{font-size:19px}
+    .scroll{border:none;overflow-x:visible}
+    table{min-width:0;font-size:14px}
+    thead{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+    tbody tr{display:block;border:1px solid var(--line);border-radius:11px;margin-bottom:10px;background:var(--panel2);overflow:hidden}
+    tbody td{display:flex;justify-content:space-between;gap:14px;align-items:baseline;
+      white-space:normal;text-align:right;padding:9px 13px;border-bottom:1px solid var(--line)}
+    tbody tr td:last-child{border-bottom:none}
+    tbody td::before{content:attr(data-label);font-weight:600;color:var(--muted);
+      text-align:left;font-size:11.5px;text-transform:uppercase;letter-spacing:.3px;flex:0 0 auto;max-width:46%}
+    tbody td[colspan]{text-align:left}
+    tbody td[colspan]::before{content:none}
+    .grid2{grid-template-columns:1fr}
+  }
 </style>
 </head>
 <body>
@@ -442,6 +460,7 @@
 <!-- ================= UPDATE LOG ================= -->
 <h2 class="section"><span class="em">📝</span> Журнал обновлений</h2>
 <ul class="log">
+  <li><b>4 июля 2026</b> — <b>мобильная адаптация</b>: на телефоне таблицы превращаются в карточки, ссылки на обзоры видны без горизонтального скролла.</li>
   <li><b>4 июля 2026</b> — добавлен раздел <b>📺 видеообзоры</b> (обзоры 1/16, дальше — по мере выхода).
   Заведён отдельный <b>архив прогнозов</b> для разбора ошибок.</li>
   <li><b>4 июля 2026</b> — 1/16 завершено. Внесены итоги (сверка прогноз/факт: 2 из 3 победителей, точный счёт Колумбия 1:0).
@@ -465,5 +484,17 @@
 </footer>
 
 </div>
+<script>
+  /* Мобильные таблицы: подписываем каждую ячейку названием её колонки из шапки */
+  document.querySelectorAll('table').forEach(function(t){
+    var heads = [].map.call(t.querySelectorAll('thead th'), function(h){ return h.textContent.trim(); });
+    if(!heads.length) return;
+    t.querySelectorAll('tbody tr').forEach(function(r){
+      var cells = r.querySelectorAll('td');
+      if(cells.length !== heads.length) return; /* пропускаем строки-примечания с colspan */
+      cells.forEach(function(c, i){ if(heads[i]) c.setAttribute('data-label', heads[i]); });
+    });
+  });
+</script>
 </body>
 </html>
