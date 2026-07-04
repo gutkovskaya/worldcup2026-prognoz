@@ -94,6 +94,11 @@
   .vid .vplay{display:inline-flex;align-items:center;gap:6px;color:var(--purple);font-weight:600;
     font-size:14px;white-space:nowrap;flex:0 0 auto}
   .vids .vsoon{color:var(--muted);font-style:italic;font-size:13.5px;padding:4px 2px}
+  .rbanner{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;background:rgba(55,201,120,.1);
+    border:1px solid rgba(55,201,120,.35);border-radius:10px;padding:8px 13px;margin:2px 0 12px;font-size:13.5px;color:#cbd5df}
+  .rbanner .rs{font-weight:700;font-variant-numeric:tabular-nums;font-size:16px;color:var(--txt)}
+  .rbanner.miss{background:rgba(248,81,73,.1);border-color:rgba(248,81,73,.32)}
+  .conf.c-done{background:rgba(55,201,120,.15);color:var(--accent);border:1px solid rgba(55,201,120,.35)}
   @media (min-width:720px){ .cards{grid-template-columns:1fr 1fr} .meta{grid-template-columns:1fr 1fr} }
 </style>
 </head>
@@ -104,7 +109,7 @@
   <h1>🏆 ЧМ-2026 — прогнозы и аналитика</h1>
   <p>Живой отчёт по плей-офф. Канада · Мексика · США.</p>
   <p><a href="https://worldcup2026-prognoz.netlify.app" style="color:var(--accent);font-weight:600">🔗 worldcup2026-prognoz.netlify.app</a></p>
-  <span class="badge">Обновлено: 4 июля 2026 · 1/16 завершено · прогнозы на 1/8 финала · 🟢 авто-деплой</span>
+  <span class="badge">Обновлено: 4 июля 2026 · идёт 1/8 финала · Канада 0:3 Марокко · 🟢 авто-деплой</span>
 </header>
 
 <div class="note">
@@ -175,8 +180,8 @@
 <table>
   <thead><tr><th>Дата</th><th>Матч</th><th>Арена</th><th>Судья</th><th>Прогноз</th><th>Фаворит</th></tr></thead>
   <tbody>
-    <tr><td>04.07</td><td>Канада — Марокко</td><td>Хьюстон 🏟️</td><td>М. Оливер 🏴</td><td class="res">1:2</td><td class="win">Марокко</td></tr>
-    <tr><td>04.07</td><td>Парагвай — Франция</td><td>Филадельфия</td><td>И. Танташев 🇺🇿</td><td class="res">0:2</td><td class="win">Франция</td></tr>
+    <tr><td>04.07</td><td>Канада — <b>Марокко</b></td><td>Хьюстон 🏟️</td><td>М. Оливер 🏴</td><td class="res">1:2</td><td class="win">✅ Марокко · факт 0:3</td></tr>
+    <tr><td>04.07</td><td>Парагвай — Франция</td><td>Филадельфия</td><td>И. Танташев 🇺🇿</td><td class="res">0:2</td><td class="win">Франция ⏳ идёт</td></tr>
     <tr><td>05.07</td><td>Бразилия — Норвегия</td><td>Нью-Джерси</td><td>И. Эльфат 🇺🇸</td><td class="res">2:1</td><td class="win">Бразилия</td></tr>
     <tr><td>05.07</td><td>Мексика — Англия</td><td>Мехико ⛰️2240м</td><td>А. Фагани 🇦🇺</td><td class="res">1:1→англ.</td><td class="win">Англия*</td></tr>
     <tr><td>06.07</td><td>Португалия — Испания</td><td>Даллас 🏟️</td><td>—</td><td class="res">1:2</td><td class="win">Испания</td></tr>
@@ -206,6 +211,10 @@
     <span class="vinfo"><span class="vstage">1/16</span><span class="vmatch">Колумбия — Гана</span><span class="vscore">1:0</span></span>
     <span class="vplay">▶ обзор (YouTube)</span>
   </a>
+  <a class="vid" href="https://www.foxsports.com/soccer/fifa-world-cup-men-canada-vs-morocco-jul-04-2026-game-boxscore-607920">
+    <span class="vinfo"><span class="vstage">1/8</span><span class="vmatch">Канада — Марокко</span><span class="vscore">0:3</span></span>
+    <span class="vplay">▶ обзор (FOX)</span>
+  </a>
   <div class="vsoon">Обзоры матчей 1/8 финала появятся здесь после игр 4–7 июля →
     <a href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/highlights">все обзоры на FIFA.com</a></div>
 </div>
@@ -216,10 +225,11 @@
 
   <!-- Canada vs Morocco -->
   <div class="card">
-    <span class="conf c-mid">средняя</span>
+    <span class="conf c-done">✅ сыграно</span>
     <div class="stage">1/8 · 04.07 · Хьюстон, NRG</div>
     <h3>🇨🇦 Канада <span class="vs">—</span> Марокко 🇲🇦</h3>
     <div class="pred"><span class="score">1:2</span> → <span class="adv">Марокко</span></div>
+    <div class="rbanner"><span class="rs">Факт 0:3</span> · ✅ прогноз верен — Марокко прошло (Унахи дубль, ассисты Хакими и Брахима Диаса). Счёт даже крупнее прогноза.</div>
     <div class="meta">
       <div class="m"><span class="ic">🧑‍⚖️</span><b>Судья:</b> Майкл Оливер (Англия) — топ-АПЛ, даёт играть, строг к симуляциям</div>
       <div class="m"><span class="ic">📍</span><b>Арена:</b> купол с AC — жара Хьюстона снята, нейтральные условия</div>
@@ -460,6 +470,7 @@
 <!-- ================= UPDATE LOG ================= -->
 <h2 class="section"><span class="em">📝</span> Журнал обновлений</h2>
 <ul class="log">
+  <li><b>4 июля 2026 (вечер)</b> — старт 1/8: <b>Канада 0:3 Марокко</b> — прогноз (Марокко) верен ✅. Парагвай—Франция идёт. Добавлен обзор Канада—Марокко.</li>
   <li><b>4 июля 2026</b> — добавлен раздел <b>📺 видеообзоры</b> отдельным блоком-списком (обзоры 1/16, дальше — по мере выхода).
   Заведён отдельный <b>архив прогнозов</b> для разбора ошибок.</li>
   <li><b>4 июля 2026</b> — 1/16 завершено. Внесены итоги (сверка прогноз/факт: 2 из 3 победителей, точный счёт Колумбия 1:0).
