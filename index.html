@@ -109,7 +109,7 @@
   <h1>🏆 ЧМ-2026 — прогнозы и аналитика</h1>
   <p>Живой отчёт по плей-офф. Канада · Мексика · США.</p>
   <p><a href="https://gutkovskaya.github.io/worldcup2026-prognoz" style="color:var(--accent);font-weight:600">🔗 gutkovskaya.github.io/worldcup2026-prognoz</a></p>
-  <span class="badge">Обновлено: 5 июля 2026 · идёт 1/8 · Марокко и Франция в 1/4 · 🟢 авто-деплой</span>
+  <span class="badge">Обновлено: 6 июля 2026 · 🚨 Норвегия выбила Бразилию · строгая оценка прогнозов (1 из 7)</span>
 </header>
 
 <div class="note">
@@ -122,7 +122,9 @@
     <span class="f">🧱 <b>стабильность состава</b></span>
     <span class="f">🩹 <b>травмы / дисквалификации</b></span>
   </div>
-  <div style="margin-top:10px">Историю очных встреч старше 3–4 лет <b>не учитываем</b>. Уверенность прогноза — цветом:</div>
+  <div style="margin-top:10px">Историю очных встреч старше 3–4 лет <b>не учитываем</b>.
+  <b style="color:var(--danger)">Строгая оценка:</b> прогноз считается верным <b>только если угадан точный счёт</b>. Угадал победителя, но не счёт — прогноз неверный.</div>
+  <div style="margin-top:6px">Уверенность прогноза — цветом:</div>
   <div class="legend">
     <span><span class="dot" style="background:var(--accent)"></span> высокая</span>
     <span><span class="dot" style="background:var(--warn)"></span> средняя</span>
@@ -131,20 +133,25 @@
 </div>
 
 <!-- ============ ACCURACY: R32 PROGNOZ vs FACT ============ -->
-<h2 class="section"><span class="em">✅</span> Сверка: прогноз 1/16 vs факт</h2>
+<h2 class="section"><span class="em">🎯</span> Сверка прогнозов — строгая оценка (только по счёту)</h2>
 <div class="scroll">
 <table>
-  <thead><tr><th>Матч</th><th>Прогноз</th><th>Факт</th><th>Прошёл</th><th>Оценка</th></tr></thead>
+  <thead><tr><th>Матч</th><th>Прогноз</th><th>Факт</th><th>Оценка (строго)</th></tr></thead>
   <tbody>
-    <tr><td>Австралия — Египет</td><td>1:1, Австралия (пен)</td><td class="res">1:1 (пен 2:4)</td><td class="win">🇪🇬 Египет</td><td class="partial">◐ счёт точен, но прошёл Египет (Салах сыграл)</td></tr>
-    <tr><td>Аргентина — Кабо-Верде</td><td>2:0 Аргентина</td><td class="res">3:2 (доп.)</td><td class="win">🇦🇷 Аргентина</td><td class="hit">✔ победитель верно (Кабо-Верде измотал, как и ждали)</td></tr>
-    <tr><td>Колумбия — Гана</td><td>1:0 Колумбия</td><td class="res">1:0</td><td class="win">🇨🇴 Колумбия</td><td class="hit">✔✔ точное попадание</td></tr>
+    <tr><td>1/16 · Австралия — Египет</td><td>1:1 (Австралия)</td><td class="res">1:1 (пен, Египет)</td><td class="partial">◐ цифры счёта верны, но проходящего назвал неверно</td></tr>
+    <tr><td>1/16 · Аргентина — Кабо-Верде</td><td>2:0</td><td class="res">3:2 доп.</td><td class="miss">❌ счёт неверный</td></tr>
+    <tr><td>1/16 · Колумбия — Гана</td><td>1:0</td><td class="res">1:0</td><td class="hit">✅ ВЕРНО (счёт + исход)</td></tr>
+    <tr><td>1/8 · Канада — Марокко</td><td>1:2</td><td class="res">0:3</td><td class="miss">❌ счёт неверный</td></tr>
+    <tr><td>1/8 · Парагвай — Франция</td><td>0:2</td><td class="res">0:1</td><td class="miss">❌ счёт неверный</td></tr>
+    <tr><td>1/8 · Бразилия — Норвегия</td><td>2:1 (Бразилия)</td><td class="res">1:2 (Норвегия)</td><td class="miss">❌ полный промах (счёт + победитель)</td></tr>
+    <tr><td>1/8 · Мексика — Англия</td><td>1:1 (Англия)</td><td class="res">2:3 (Англия)</td><td class="miss">❌ счёт неверный (исход угадал)</td></tr>
   </tbody>
 </table>
 </div>
-<div class="note" style="border-left-color:var(--accent)">
-  <b>Итог 1/16:</b> победитель угадан в <b>2 из 3</b> (в Австралия—Египет прямо оговаривалось: «если Салах играет — Египет фаворит», так и вышло).
-  Точный счёт — <b>Колумбия 1:0</b>. Предупреждение про оборону Бубишты подтвердилось — Кабо-Верде дотащил чемпионов до доп. времени.
+<div class="note" style="border-left-color:var(--danger)">
+  <b>Честный итог по строгой оценке:</b> полностью верный прогноз (счёт + проходящий) — <b>1 из 7</b> (только Колумбия 1:0).
+  Совпадение цифр счёта — 2 из 7. Всё остальное считаю <b>неверным</b>, даже там, где угадан победитель (Марокко, Франция, Англия).
+  <b>Вывод:</b> угадывать исход недостаточно — точный счёт даётся редко, надо честно признавать промахи и не выдавать «угадал победителя» за успех.
 </div>
 
 <!-- ================= BRACKET ================= -->
@@ -182,8 +189,8 @@
   <tbody>
     <tr><td>04.07 · 20:00</td><td>Канада — <b>Марокко</b></td><td>Хьюстон 🏟️</td><td>М. Оливер 🏴</td><td class="res">1:2</td><td class="win">✅ Марокко · факт 0:3</td></tr>
     <tr><td>05.07 · 00:00</td><td>Парагвай — <b>Франция</b></td><td>Филадельфия</td><td>И. Танташев 🇺🇿</td><td class="res">0:2</td><td class="win">✅ Франция · факт 0:1</td></tr>
-    <tr><td><b>05.07 · 23:00</b></td><td>Бразилия — Норвегия</td><td>Нью-Джерси</td><td>И. Эльфат 🇺🇸</td><td class="res">2:1</td><td class="win">Бразилия</td></tr>
-    <tr><td><b>06.07 · 03:00</b></td><td>Мексика — Англия</td><td>Мехико ⛰️2200м</td><td>А. Фагани 🇦🇺</td><td class="res">1:1→англ.</td><td class="win">Англия*</td></tr>
+    <tr><td>05.07 · 23:00</td><td>Бразилия — <b>Норвегия</b></td><td>Нью-Джерси</td><td>И. Эльфат 🇺🇸</td><td class="res">2:1</td><td style="color:var(--danger);font-weight:600">❌ мимо · факт 1:2 (Норвегия)</td></tr>
+    <tr><td>06.07 · 03:00</td><td>Мексика — <b>Англия</b></td><td>Мехико ⛰️2200м</td><td>А. Фагани 🇦🇺</td><td class="res">1:1→англ.</td><td style="color:var(--warn);font-weight:600">❌ по счёту (исход верен) · факт 2:3</td></tr>
     <tr><td>06.07 · 22:00</td><td>Португалия — Испания</td><td>Даллас 🏟️</td><td>—</td><td class="res">1:2</td><td class="win">Испания</td></tr>
     <tr><td>07.07 · 03:00</td><td>США — Бельгия</td><td>Сиэтл ❄️</td><td>—</td><td class="res">2:1</td><td class="win">США</td></tr>
     <tr><td>07.07 · 19:00</td><td>Аргентина — Египет</td><td>Атланта 🏟️</td><td>—</td><td class="res">2:0</td><td class="win">Аргентина</td></tr>
@@ -193,18 +200,19 @@
 </div>
 <p style="font-size:12.5px;color:var(--muted);margin:8px 2px">🏟️ — стадион с крышей/кондиционером (жара снята) · ⛰️ — высота · ❄️ — прохладный климат · * — фаворит по классу, но высота Ацтеки уравнивает.</p>
 
-<h3 style="margin:22px 0 8px;font-size:16px;color:var(--muted)">1/4 финала — складывается</h3>
+<h3 style="margin:22px 0 8px;font-size:16px;color:var(--muted)">1/4 финала — 9–11 июля</h3>
 <div class="scroll">
 <table>
-  <thead><tr><th>Пара</th><th>Статус</th></tr></thead>
+  <thead><tr><th>Дата · место</th><th>Пара</th><th>Прогноз</th><th>Фаворит</th></tr></thead>
   <tbody>
-    <tr><td>🇲🇦 Марокко — Франция 🇫🇷</td><td class="win">✅ пара определена (прогноз добавлю)</td></tr>
-    <tr><td>Бразилия/Норвегия — Мексика/Англия</td><td>после матчей 5 июля</td></tr>
-    <tr><td>Португалия/Испания — США/Бельгия</td><td>после матчей 6 июля</td></tr>
-    <tr><td>Аргентина/Египет — Колумбия/Швейцария</td><td>после матчей 7 июля</td></tr>
+    <tr><td>~10.07 · Фоксборо</td><td>🇲🇦 Марокко — Франция 🇫🇷</td><td class="res">1:2</td><td class="win">Франция (тесно)</td></tr>
+    <tr><td>~11.07 · Майами 🔥</td><td>🇳🇴 Норвегия — Англия 🏴󠁧󠁢󠁥󠁮󠁧󠁿</td><td class="res">1:2</td><td class="win">Англия (50/50)</td></tr>
+    <tr><td>после 06.07</td><td>Португалия/Испания — США/Бельгия</td><td class="res">—</td><td>ждём 1/8</td></tr>
+    <tr><td>после 07.07</td><td>Аргентина/Египет — Колумбия/Швейцария</td><td class="res">—</td><td>ждём 1/8</td></tr>
   </tbody>
 </table>
 </div>
+<p style="font-size:12.5px;color:var(--muted);margin:8px 2px">🔥 — Майами, самая жаркая арена турнира (влияет на владеющую мячом Англию). Точные даты/время 1/4 уточню ближе к матчам.</p>
 
 <!-- ================= VIDEO REVIEWS ================= -->
 <h2 class="section"><span class="em">📺</span> Видеообзоры матчей</h2>
@@ -230,6 +238,14 @@
   </a>
   <a class="vid" href="https://www.foxsports.com/soccer/fifa-world-cup-men-paraguay-vs-france-jul-04-2026-game-boxscore-607919">
     <span class="vinfo"><span class="vstage">1/8</span><span class="vmatch">Парагвай — Франция</span><span class="vscore">0:1</span></span>
+    <span class="vplay">▶ обзор (FOX)</span>
+  </a>
+  <a class="vid" href="https://www.espn.com/soccer/report/_/gameId/760504">
+    <span class="vinfo"><span class="vstage">1/8</span><span class="vmatch">Бразилия — Норвегия</span><span class="vscore">1:2</span></span>
+    <span class="vplay">▶ обзор (ESPN)</span>
+  </a>
+  <a class="vid" href="https://www.foxsports.com/soccer/fifa-world-cup-men-mexico-vs-england-jul-05-2026-game-boxscore-607922">
+    <span class="vinfo"><span class="vstage">1/8</span><span class="vmatch">Мексика — Англия</span><span class="vscore">2:3</span></span>
     <span class="vplay">▶ обзор (FOX)</span>
   </a>
   <div class="vsoon">Обзоры матчей 1/8 финала появятся здесь после игр 4–7 июля →
@@ -296,10 +312,11 @@
 
   <!-- Brazil vs Norway -->
   <div class="card">
-    <span class="conf c-mid">средняя</span>
+    <span class="conf c-done" style="background:rgba(248,81,73,.15);color:var(--danger);border-color:rgba(248,81,73,.35)">❌ прогноз мимо</span>
     <div class="stage">1/8 · 05.07, 23:00 Минск · Нью-Джерси, MetLife</div>
     <h3>🇧🇷 Бразилия <span class="vs">—</span> Норвегия 🇳🇴</h3>
     <div class="pred"><span class="score">2:1</span> → <span class="adv">Бразилия</span></div>
+    <div class="rbanner miss"><span class="rs">Факт 1:2</span> · ❌ <b>неверно и по счёту, и по победителю</b>. Норвегия (дубль Холанда, теперь 7 голов) выбила Бразилию. Апсет я прямо называл вероятным — но всё равно поставил на фаворита. Записываю как ошибку и урок.</div>
     <div class="meta">
       <div class="m"><span class="ic">🧑‍⚖️</span><b>Судья:</b> Исмаил Эльфат (США) — даёт вести силовую борьбу, умеренные карточки</div>
       <div class="m"><span class="ic">📍</span><b>Арена:</b> MetLife, открытый, тепло/влажно · трибуны за Бразилию</div>
@@ -328,10 +345,11 @@
 
   <!-- Mexico vs England -->
   <div class="card">
-    <span class="conf c-low">низкая ⚠️</span>
+    <span class="conf c-done" style="background:rgba(240,180,41,.15);color:var(--warn);border-color:rgba(240,180,41,.35)">❌ счёт мимо</span>
     <div class="stage">1/8 · 06.07, 03:00 Минск · Мехико, Ацтека ⛰️</div>
     <h3>🇲🇽 Мексика <span class="vs">—</span> Англия 🏴󠁧󠁢󠁥󠁮󠁧󠁿</h3>
     <div class="pred"><span class="score">1:1</span> → <span class="adv">Англия (в доп./пен.)</span></div>
+    <div class="rbanner miss" style="background:rgba(240,180,41,.1);border-color:rgba(240,180,41,.3)"><span class="rs">Факт 2:3</span> · ❌ по строгой оценке <b>неверно</b>: исход (Англия) угадал, но счёт — нет (ждал 1:1, вышло 3:2 в основное). Дубль Беллингема, Англия дожала в меньшинстве. Высота не спасла Мексику — класс решил, как и отмечалось.</div>
     <div class="meta">
       <div class="m"><span class="ic">🧑‍⚖️</span><b>Судья:</b> Алиреза Фагани (Австралия) — опытный, строгий, не дрогнет перед трибунами</div>
       <div class="m"><span class="ic">📍</span><b>Арена:</b> ⛰️ высота 2200 м + 87 000 против Англии + риск грозы. <b>Огромный фактор Мексики</b></div>
@@ -468,16 +486,78 @@
 
 </div>
 
+<!-- ================= QUARTERFINAL CARDS ================= -->
+<h2 class="section"><span class="em">🏆</span> 1/4 финала — прогнозы (известные пары)</h2>
+<div class="cards">
+
+  <!-- Morocco vs France -->
+  <div class="card marquee">
+    <span class="conf c-mid">средняя</span>
+    <div class="stage">1/4 · ~10.07 · Фоксборо, Gillette</div>
+    <h3>🇲🇦 Марокко <span class="vs">—</span> Франция 🇫🇷</h3>
+    <div class="pred"><span class="score">1:2</span> → <span class="adv">Франция (тесно)</span></div>
+    <div class="meta">
+      <div class="m"><span class="ic">🧑‍⚖️</span><b>Судья:</b> пока не назначен</div>
+      <div class="m"><span class="ic">📍</span><b>Арена:</b> Gillette, открытый, умеренный климат Новой Англии — жара не мешает</div>
+    </div>
+    <div class="grid2">
+      <div class="tcell"><div class="tn">Марокко</div>
+        <div class="row"><b>Тренер:</b> Реграги (полуфинал-2022)</div>
+        <div class="row"><b>Путь:</b> Нидерланды (пен), Канада 3:0</div>
+        <div class="row"><b>Козырь:</b> оборона + Хакими, Унахи, Рахими</div>
+      </div>
+      <div class="tcell"><div class="tn">Франция</div>
+        <div class="row"><b>Тренер:</b> Дешам</div>
+        <div class="row"><b>Путь:</b> Швеция 3:0, Парагвай 1:0</div>
+        <div class="row"><b>Козырь:</b> Мбаппе (7, дележ Золотой бутсы), Дембеле</div>
+      </div>
+    </div>
+    <p class="analysis"><span class="coach">Тренер:</span> Дешам vs Реграги — оба сильны в плей-офф; Марокко — первая африканская сборная с двумя
+    четвертьфиналами ЧМ, оборона топ-уровня. <span class="venue">Место:</span> в Фоксборо жары нет, условия ровные. Франция мощнее в атаке
+    (Мбаппе, Дембеле, Олисе) и глубже, но Марокко мало пропускает — жду <b>тесный, малорезультативный матч</b>, перевес Франции по классу.
+    <b>Прогноз 1:2 Франция</b>, реально до доп. времени; Марокко — очень живой соперник.</p>
+  </div>
+
+  <!-- Norway vs England -->
+  <div class="card marquee">
+    <span class="conf c-low">низкая ⚠️ 50/50</span>
+    <div class="stage">1/4 · ~11.07 · Майами, Hard Rock 🔥</div>
+    <h3>🇳🇴 Норвегия <span class="vs">—</span> Англия 🏴󠁧󠁢󠁥󠁮󠁧󠁿</h3>
+    <div class="pred"><span class="score">1:2</span> → <span class="adv">Англия (50/50)</span></div>
+    <div class="meta">
+      <div class="m"><span class="ic">🧑‍⚖️</span><b>Судья:</b> пока не назначен</div>
+      <div class="m"><span class="ic">📍</span><b>Арена:</b> 🔥 Майами — самая жаркая арена турнира; бьёт по владеющей мячом Англии, помогает прямой Норвегии</div>
+    </div>
+    <div class="grid2">
+      <div class="tcell"><div class="tn">Норвегия</div>
+        <div class="row"><b>Тренер:</b> Сульбаккен</div>
+        <div class="row"><b>Импульс:</b> сенсационно выбили Бразилию 2:1</div>
+        <div class="row"><b>🔥 Холанд</b> — 7 голов (дележ Золотой бутсы), Эдегор, Сёрлот</div>
+      </div>
+      <div class="tcell"><div class="tn">Англия</div>
+        <div class="row"><b>Тренер:</b> Тухель</div>
+        <div class="row"><b>Класс:</b> Кейн (6), Беллингем (дубль), Сака</div>
+        <div class="row"><b>⚠️ Куонзе дисквал.</b> (красная) — дыра в обороне под Холанда</div>
+      </div>
+    </div>
+    <p class="analysis"><b>Честно — это 50/50.</b> Англия глубже и качественнее (Кейн, Беллингем, Сака) и прошла Мексику даже вдесятером.
+    <b>Но</b> против неё три фактора: <span class="venue">жара Майами</span> выматывает её контроль мяча; <b>дисквалификация Куонзе</b> ослабляет
+    оборону ровно под <b>Холанда в форме Золотой бутсы</b>; и у Норвегии — импульс после Бразилии. <b>Урок из промаха Бразилия—Норвегия учтён:</b>
+    форму бомбардира и мотивацию аутсайдера недооценивать нельзя. Ставлю на класс Англии — <b>1:2</b>, но с низкой уверенностью: Норвегия реально может пройти.</p>
+  </div>
+
+</div>
+
 <!-- ================= SUMMARY ================= -->
 <h2 class="section"><span class="em">🧮</span> Сводка прогнозов 1/8</h2>
 <div class="scroll">
 <table>
   <thead><tr><th>Матч</th><th>Счёт</th><th>Проходит</th><th>Решающий фактор</th><th>Увер.</th></tr></thead>
   <tbody>
-    <tr><td>Канада — Марокко</td><td class="res">1:2</td><td class="win">Марокко</td><td>опыт тренера + судья строг к симуляции</td><td>средняя</td></tr>
-    <tr><td>Парагвай — Франция</td><td class="res">0:2</td><td class="win">Франция</td><td>класс + судья карает грубость Парагвая</td><td>высокая</td></tr>
-    <tr><td>Бразилия — Норвегия</td><td class="res">2:1</td><td class="win">Бразилия</td><td>глубина; риск — Холанд + либеральный судья</td><td>средняя</td></tr>
-    <tr><td>Мексика — Англия</td><td class="res">1:1→</td><td class="win">Англия</td><td>⚠️ высота Ацтеки уравнивает класс</td><td>низкая</td></tr>
+    <tr><td>Канада — Марокко</td><td class="res">1:2</td><td class="partial">факт 0:3 ❌ счёт</td><td>опыт тренера + судья строг к симуляции</td><td>средняя</td></tr>
+    <tr><td>Парагвай — Франция</td><td class="res">0:2</td><td class="partial">факт 0:1 ❌ счёт</td><td>класс + судья карает грубость Парагвая</td><td>высокая</td></tr>
+    <tr><td>Бразилия — Норвегия</td><td class="res">2:1</td><td class="miss">факт 1:2 ❌ мимо</td><td>глубина; риск — Холанд + либеральный судья</td><td>средняя</td></tr>
+    <tr><td>Мексика — Англия</td><td class="res">1:1→</td><td class="partial">факт 2:3 ❌ счёт</td><td>⚠️ высота Ацтеки уравнивает класс</td><td>низкая</td></tr>
     <tr><td>Португалия — Испания</td><td class="res">1:2</td><td class="win">Испания</td><td>полузащита + купол под пас Испании</td><td>средняя</td></tr>
     <tr><td>США — Бельгия</td><td class="res">2:1</td><td class="win">США</td><td>дом + прохлада; минус — дискв. Балогуна</td><td>средняя</td></tr>
     <tr><td>Аргентина — Египет</td><td class="res">2:0</td><td class="win">Аргентина</td><td>класс + глубина скамейки</td><td>высокая</td></tr>
@@ -499,6 +579,7 @@
 <!-- ================= UPDATE LOG ================= -->
 <h2 class="section"><span class="em">📝</span> Журнал обновлений</h2>
 <ul class="log">
+  <li><b>6 июля 2026</b> — введена <b>строгая оценка прогнозов</b> (успех = только точный счёт). Внесены итоги 1/8: 🚨 Норвегия 2:1 Бразилия (промах), Англия 3:2 Мексика (счёт мимо). Добавлены прогнозы 1/4: Марокко—Франция, Норвегия—Англия. Честный счёт: <b>1 верный из 7</b>.</li>
   <li><b>5 июля 2026</b> — глубокая перепроверка матчей дня: добавлены <b>схемы, составы и свежие травмы</b> (Бразилия — Пакета/Касемиру под ⁇; Норвегия без Рюрсона; Англия без Р. Джеймса, Райс под ⁇). Прогнозы подтверждены с уточнениями.</li>
   <li><b>5 июля 2026</b> — <b>Франция 1:0 Парагвай</b> — прогноз (Франция) верен ✅. Определилась 1-я пара 1/4: <b>Марокко — Франция</b>. Добавлен обзор.</li>
   <li><b>4 июля 2026 (вечер)</b> — старт 1/8: <b>Канада 0:3 Марокко</b> — прогноз (Марокко) верен ✅. Парагвай—Франция идёт. Добавлен обзор Канада—Марокко.</li>
