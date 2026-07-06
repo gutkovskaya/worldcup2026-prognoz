@@ -98,6 +98,7 @@
     border:1px solid rgba(55,201,120,.35);border-radius:10px;padding:8px 13px;margin:2px 0 12px;font-size:13.5px;color:#cbd5df}
   .rbanner .rs{font-weight:700;font-variant-numeric:tabular-nums;font-size:16px;color:var(--txt)}
   .rbanner.miss{background:rgba(248,81,73,.1);border-color:rgba(248,81,73,.32)}
+  .rbanner.warn{background:rgba(240,180,41,.1);border-color:rgba(240,180,41,.32)}
   .conf.c-done{background:rgba(55,201,120,.15);color:var(--accent);border:1px solid rgba(55,201,120,.35)}
   @media (min-width:720px){ .cards{grid-template-columns:1fr 1fr} .meta{grid-template-columns:1fr 1fr} }
 </style>
@@ -123,8 +124,13 @@
     <span class="f">🩹 <b>травмы / дисквалификации</b></span>
   </div>
   <div style="margin-top:10px">Историю очных встреч старше 3–4 лет <b>не учитываем</b>.
-  <b style="color:var(--danger)">Строгая оценка:</b> прогноз считается верным <b>только если угадан точный счёт</b>. Угадал победителя, но не счёт — прогноз неверный.</div>
-  <div style="margin-top:6px">Уверенность прогноза — цветом:</div>
+  <b style="color:var(--danger)">Строгая оценка:</b> прогноз верен <b>только при точном счёте</b>. Маркировка оценки:</div>
+  <div class="legend" style="margin-top:8px">
+    <span><span class="dot" style="background:var(--accent)"></span> 🟢 счёт угадан (полностью верно)</span>
+    <span><span class="dot" style="background:var(--warn)"></span> 🟡 исход верный, счёт — нет</span>
+    <span><span class="dot" style="background:var(--danger)"></span> 🔴 исход неверный</span>
+  </div>
+  <div style="margin-top:8px">Уверенность прогноза — цветом:</div>
   <div class="legend">
     <span><span class="dot" style="background:var(--accent)"></span> высокая</span>
     <span><span class="dot" style="background:var(--warn)"></span> средняя</span>
@@ -138,20 +144,22 @@
 <table>
   <thead><tr><th>Матч</th><th>Прогноз</th><th>Факт</th><th>Оценка (строго)</th></tr></thead>
   <tbody>
-    <tr><td>1/16 · Австралия — Египет</td><td>1:1 (Австралия)</td><td class="res">1:1 (пен, Египет)</td><td class="partial">◐ цифры счёта верны, но проходящего назвал неверно</td></tr>
-    <tr><td>1/16 · Аргентина — Кабо-Верде</td><td>2:0</td><td class="res">3:2 доп.</td><td class="miss">❌ счёт неверный</td></tr>
-    <tr><td>1/16 · Колумбия — Гана</td><td>1:0</td><td class="res">1:0</td><td class="hit">✅ ВЕРНО (счёт + исход)</td></tr>
-    <tr><td>1/8 · Канада — Марокко</td><td>1:2</td><td class="res">0:3</td><td class="miss">❌ счёт неверный</td></tr>
-    <tr><td>1/8 · Парагвай — Франция</td><td>0:2</td><td class="res">0:1</td><td class="miss">❌ счёт неверный</td></tr>
-    <tr><td>1/8 · Бразилия — Норвегия</td><td>2:1 (Бразилия)</td><td class="res">1:2 (Норвегия)</td><td class="miss">❌ полный промах (счёт + победитель)</td></tr>
-    <tr><td>1/8 · Мексика — Англия</td><td>1:1 (Англия)</td><td class="res">2:3 (Англия)</td><td class="miss">❌ счёт неверный (исход угадал)</td></tr>
+    <tr><td>1/16 · Колумбия — Гана</td><td>1:0</td><td class="res">1:0</td><td class="hit">🟢 счёт угадан (полностью верно)</td></tr>
+    <tr><td>1/16 · Аргентина — Кабо-Верде</td><td>2:0</td><td class="res">3:2 доп.</td><td class="partial">🟡 исход верный (Аргентина), счёт — нет</td></tr>
+    <tr><td>1/8 · Канада — Марокко</td><td>1:2</td><td class="res">0:3</td><td class="partial">🟡 исход верный (Марокко), счёт — нет</td></tr>
+    <tr><td>1/8 · Парагвай — Франция</td><td>0:2</td><td class="res">0:1</td><td class="partial">🟡 исход верный (Франция), счёт — нет</td></tr>
+    <tr><td>1/8 · Мексика — Англия</td><td>1:1 (Англия)</td><td class="res">2:3 (Англия)</td><td class="partial">🟡 исход верный (Англия), счёт — нет</td></tr>
+    <tr><td>1/16 · Австралия — Египет</td><td>1:1 (Австралия)</td><td class="res">1:1 (пен, Египет)</td><td class="miss">🔴 исход неверный (прошёл Египет)</td></tr>
+    <tr><td>1/8 · Бразилия — Норвегия</td><td>2:1 (Бразилия)</td><td class="res">1:2 (Норвегия)</td><td class="miss">🔴 исход неверный (прошла Норвегия)</td></tr>
   </tbody>
 </table>
 </div>
-<div class="note" style="border-left-color:var(--danger)">
-  <b>Честный итог по строгой оценке:</b> полностью верный прогноз (счёт + проходящий) — <b>1 из 7</b> (только Колумбия 1:0).
-  Совпадение цифр счёта — 2 из 7. Всё остальное считаю <b>неверным</b>, даже там, где угадан победитель (Марокко, Франция, Англия).
-  <b>Вывод:</b> угадывать исход недостаточно — точный счёт даётся редко, надо честно признавать промахи и не выдавать «угадал победителя» за успех.
+<div class="note" style="border-left-color:var(--warn)">
+  <b>Честный итог из 7 сыгранных:</b>
+  <span style="color:var(--accent);font-weight:600">🟢 1</span> (счёт угадан — Колумбия 1:0) ·
+  <span style="color:var(--warn);font-weight:600">🟡 4</span> (исход верный, счёт нет — Аргентина, Марокко, Франция, Англия) ·
+  <span style="color:var(--danger);font-weight:600">🔴 2</span> (исход неверный — Австралия/Египет, Бразилия/Норвегия).
+  <br><b>Вывод:</b> победителя читаю неплохо (5 из 7), но точный счёт — лишь <b>1 из 7</b>. Не выдаю «угадал победителя» за успех.
 </div>
 
 <!-- ================= BRACKET ================= -->
@@ -187,10 +195,10 @@
 <table>
   <thead><tr><th>Начало (Минск)</th><th>Матч</th><th>Арена</th><th>Судья</th><th>Прогноз</th><th>Фаворит</th></tr></thead>
   <tbody>
-    <tr><td>04.07 · 20:00</td><td>Канада — <b>Марокко</b></td><td>Хьюстон 🏟️</td><td>М. Оливер 🏴</td><td class="res">1:2</td><td class="win">✅ Марокко · факт 0:3</td></tr>
-    <tr><td>05.07 · 00:00</td><td>Парагвай — <b>Франция</b></td><td>Филадельфия</td><td>И. Танташев 🇺🇿</td><td class="res">0:2</td><td class="win">✅ Франция · факт 0:1</td></tr>
-    <tr><td>05.07 · 23:00</td><td>Бразилия — <b>Норвегия</b></td><td>Нью-Джерси</td><td>И. Эльфат 🇺🇸</td><td class="res">2:1</td><td style="color:var(--danger);font-weight:600">❌ мимо · факт 1:2 (Норвегия)</td></tr>
-    <tr><td>06.07 · 03:00</td><td>Мексика — <b>Англия</b></td><td>Мехико ⛰️2200м</td><td>А. Фагани 🇦🇺</td><td class="res">1:1→англ.</td><td style="color:var(--warn);font-weight:600">❌ по счёту (исход верен) · факт 2:3</td></tr>
+    <tr><td>04.07 · 20:00</td><td>Канада — <b>Марокко</b></td><td>Хьюстон 🏟️</td><td>М. Оливер 🏴</td><td class="res">1:2</td><td style="color:var(--warn);font-weight:600">🟡 исход верен · факт 0:3</td></tr>
+    <tr><td>05.07 · 00:00</td><td>Парагвай — <b>Франция</b></td><td>Филадельфия</td><td>И. Танташев 🇺🇿</td><td class="res">0:2</td><td style="color:var(--warn);font-weight:600">🟡 исход верен · факт 0:1</td></tr>
+    <tr><td>05.07 · 23:00</td><td>Бразилия — <b>Норвегия</b></td><td>Нью-Джерси</td><td>И. Эльфат 🇺🇸</td><td class="res">2:1</td><td style="color:var(--danger);font-weight:600">🔴 исход неверен · факт 1:2</td></tr>
+    <tr><td>06.07 · 03:00</td><td>Мексика — <b>Англия</b></td><td>Мехико ⛰️2200м</td><td>А. Фагани 🇦🇺</td><td class="res">1:1→англ.</td><td style="color:var(--warn);font-weight:600">🟡 исход верен · факт 2:3</td></tr>
     <tr><td>06.07 · 22:00</td><td>Португалия — Испания</td><td>Даллас 🏟️</td><td>—</td><td class="res">1:2</td><td class="win">Испания</td></tr>
     <tr><td>07.07 · 03:00</td><td>США — Бельгия</td><td>Сиэтл ❄️</td><td>—</td><td class="res">2:1</td><td class="win">США</td></tr>
     <tr><td>07.07 · 19:00</td><td>Аргентина — Египет</td><td>Атланта 🏟️</td><td>—</td><td class="res">2:0</td><td class="win">Аргентина</td></tr>
@@ -258,11 +266,11 @@
 
   <!-- Canada vs Morocco -->
   <div class="card">
-    <span class="conf c-done">✅ сыграно</span>
+    <span class="conf c-done" style="background:rgba(240,180,41,.15);color:var(--warn);border-color:rgba(240,180,41,.35)">🟡 счёт мимо</span>
     <div class="stage">1/8 · 04.07, 20:00 Минск · Хьюстон, NRG</div>
     <h3>🇨🇦 Канада <span class="vs">—</span> Марокко 🇲🇦</h3>
     <div class="pred"><span class="score">1:2</span> → <span class="adv">Марокко</span></div>
-    <div class="rbanner"><span class="rs">Факт 0:3</span> · ✅ прогноз верен — Марокко прошло (Унахи дубль, ассисты Хакими и Брахима Диаса). Счёт даже крупнее прогноза.</div>
+    <div class="rbanner warn"><span class="rs">Факт 0:3</span> · 🟡 исход верный (Марокко), но счёт — нет (ждал 1:2). Унахи дубль, ассисты Хакими и Брахима Диаса — Марокко даже мощнее прогноза.</div>
     <div class="meta">
       <div class="m"><span class="ic">🧑‍⚖️</span><b>Судья:</b> Майкл Оливер (Англия) — топ-АПЛ, даёт играть, строг к симуляциям</div>
       <div class="m"><span class="ic">📍</span><b>Арена:</b> купол с AC — жара Хьюстона снята, нейтральные условия</div>
@@ -285,11 +293,11 @@
 
   <!-- Paraguay vs France -->
   <div class="card">
-    <span class="conf c-done">✅ сыграно</span>
+    <span class="conf c-done" style="background:rgba(240,180,41,.15);color:var(--warn);border-color:rgba(240,180,41,.35)">🟡 счёт мимо</span>
     <div class="stage">1/8 · 05.07, 00:00 Минск · Филадельфия</div>
     <h3>🇵🇾 Парагвай <span class="vs">—</span> Франция 🇫🇷</h3>
     <div class="pred"><span class="score">0:2</span> → <span class="adv">Франция</span></div>
-    <div class="rbanner"><span class="rs">Факт 0:1</span> · ✅ прогноз верен — Франция прошла. Парагвай (как и ждали от обороны Альфаро) сделал матч тесным, крупного счёта не вышло.</div>
+    <div class="rbanner warn"><span class="rs">Факт 0:1</span> · 🟡 исход верный (Франция), но счёт — нет (ждал 0:2). Парагвай (оборона Альфаро) сделал матч тесным, крупного счёта не вышло.</div>
     <div class="meta">
       <div class="m"><span class="ic">🧑‍⚖️</span><b>Судья:</b> Ильгиз Танташев (Узбекистан) — строг к жёсткой игре, много карточек за фолы</div>
       <div class="m"><span class="ic">📍</span><b>Арена:</b> открытый стадион, жара+влажность ~30°C</div>
@@ -312,11 +320,11 @@
 
   <!-- Brazil vs Norway -->
   <div class="card">
-    <span class="conf c-done" style="background:rgba(248,81,73,.15);color:var(--danger);border-color:rgba(248,81,73,.35)">❌ прогноз мимо</span>
+    <span class="conf c-done" style="background:rgba(248,81,73,.15);color:var(--danger);border-color:rgba(248,81,73,.35)">🔴 исход неверен</span>
     <div class="stage">1/8 · 05.07, 23:00 Минск · Нью-Джерси, MetLife</div>
     <h3>🇧🇷 Бразилия <span class="vs">—</span> Норвегия 🇳🇴</h3>
     <div class="pred"><span class="score">2:1</span> → <span class="adv">Бразилия</span></div>
-    <div class="rbanner miss"><span class="rs">Факт 1:2</span> · ❌ <b>неверно и по счёту, и по победителю</b>. Норвегия (дубль Холанда, теперь 7 голов) выбила Бразилию. Апсет я прямо называл вероятным — но всё равно поставил на фаворита. Записываю как ошибку и урок.</div>
+    <div class="rbanner miss"><span class="rs">Факт 1:2</span> · 🔴 <b>исход неверный</b> — и счёт, и победитель. Норвегия (дубль Холанда, теперь 7 голов) выбила Бразилию. Апсет я прямо называл вероятным — но всё равно поставил на фаворита. Записываю как ошибку и урок.</div>
     <div class="meta">
       <div class="m"><span class="ic">🧑‍⚖️</span><b>Судья:</b> Исмаил Эльфат (США) — даёт вести силовую борьбу, умеренные карточки</div>
       <div class="m"><span class="ic">📍</span><b>Арена:</b> MetLife, открытый, тепло/влажно · трибуны за Бразилию</div>
@@ -345,11 +353,11 @@
 
   <!-- Mexico vs England -->
   <div class="card">
-    <span class="conf c-done" style="background:rgba(240,180,41,.15);color:var(--warn);border-color:rgba(240,180,41,.35)">❌ счёт мимо</span>
+    <span class="conf c-done" style="background:rgba(240,180,41,.15);color:var(--warn);border-color:rgba(240,180,41,.35)">🟡 счёт мимо</span>
     <div class="stage">1/8 · 06.07, 03:00 Минск · Мехико, Ацтека ⛰️</div>
     <h3>🇲🇽 Мексика <span class="vs">—</span> Англия 🏴󠁧󠁢󠁥󠁮󠁧󠁿</h3>
     <div class="pred"><span class="score">1:1</span> → <span class="adv">Англия (в доп./пен.)</span></div>
-    <div class="rbanner miss" style="background:rgba(240,180,41,.1);border-color:rgba(240,180,41,.3)"><span class="rs">Факт 2:3</span> · ❌ по строгой оценке <b>неверно</b>: исход (Англия) угадал, но счёт — нет (ждал 1:1, вышло 3:2 в основное). Дубль Беллингема, Англия дожала в меньшинстве. Высота не спасла Мексику — класс решил, как и отмечалось.</div>
+    <div class="rbanner warn"><span class="rs">Факт 2:3</span> · 🟡 исход верный (Англия), но счёт — нет (ждал 1:1, вышло 3:2 в основное). Дубль Беллингема, Англия дожала в меньшинстве. Высота не спасла Мексику — класс решил, как и отмечалось.</div>
     <div class="meta">
       <div class="m"><span class="ic">🧑‍⚖️</span><b>Судья:</b> Алиреза Фагани (Австралия) — опытный, строгий, не дрогнет перед трибунами</div>
       <div class="m"><span class="ic">📍</span><b>Арена:</b> ⛰️ высота 2200 м + 87 000 против Англии + риск грозы. <b>Огромный фактор Мексики</b></div>
@@ -554,10 +562,10 @@
 <table>
   <thead><tr><th>Матч</th><th>Счёт</th><th>Проходит</th><th>Решающий фактор</th><th>Увер.</th></tr></thead>
   <tbody>
-    <tr><td>Канада — Марокко</td><td class="res">1:2</td><td class="partial">факт 0:3 ❌ счёт</td><td>опыт тренера + судья строг к симуляции</td><td>средняя</td></tr>
-    <tr><td>Парагвай — Франция</td><td class="res">0:2</td><td class="partial">факт 0:1 ❌ счёт</td><td>класс + судья карает грубость Парагвая</td><td>высокая</td></tr>
-    <tr><td>Бразилия — Норвегия</td><td class="res">2:1</td><td class="miss">факт 1:2 ❌ мимо</td><td>глубина; риск — Холанд + либеральный судья</td><td>средняя</td></tr>
-    <tr><td>Мексика — Англия</td><td class="res">1:1→</td><td class="partial">факт 2:3 ❌ счёт</td><td>⚠️ высота Ацтеки уравнивает класс</td><td>низкая</td></tr>
+    <tr><td>Канада — Марокко</td><td class="res">1:2</td><td class="partial">🟡 факт 0:3</td><td>опыт тренера + судья строг к симуляции</td><td>средняя</td></tr>
+    <tr><td>Парагвай — Франция</td><td class="res">0:2</td><td class="partial">🟡 факт 0:1</td><td>класс + судья карает грубость Парагвая</td><td>высокая</td></tr>
+    <tr><td>Бразилия — Норвегия</td><td class="res">2:1</td><td class="miss">🔴 факт 1:2</td><td>глубина; риск — Холанд + либеральный судья</td><td>средняя</td></tr>
+    <tr><td>Мексика — Англия</td><td class="res">1:1→</td><td class="partial">🟡 факт 2:3</td><td>⚠️ высота Ацтеки уравнивает класс</td><td>низкая</td></tr>
     <tr><td>Португалия — Испания</td><td class="res">1:2</td><td class="win">Испания</td><td>полузащита + купол под пас Испании</td><td>средняя</td></tr>
     <tr><td>США — Бельгия</td><td class="res">2:1</td><td class="win">США</td><td>дом + прохлада; минус — дискв. Балогуна</td><td>средняя</td></tr>
     <tr><td>Аргентина — Египет</td><td class="res">2:0</td><td class="win">Аргентина</td><td>класс + глубина скамейки</td><td>высокая</td></tr>
